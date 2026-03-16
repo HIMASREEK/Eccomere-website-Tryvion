@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
-
+from dotenv import load_dotenv
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -137,8 +138,11 @@ MESSAGE_TAGS = {
 }
 
 # SMPT CONFIGURATION 
+load_dotenv()
+
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'himasreek557@gmail.com'
-EMAIL_HOST_PASSWORD = 'tzjfrxcmafbtmccb'
+
 EMAIL_USE_TLS = True
