@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-bflhyc0kk&#2cyc8smw-rtvt@qe8o8uwd3&fy^zc_i_8u=h2m7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,11 +121,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
+
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR /'static'
+
 STATICFILES_DIRS = [
-    'tryvion/static',
+    BASE_DIR / 'static',
 ]
+
 
 #media files configuration
 MEDIA_URL = '/media/'
